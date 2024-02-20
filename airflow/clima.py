@@ -13,6 +13,8 @@ data_fim = data_fim.strftime('%Y-%m-%d')
 
 city = 'Boston'
 
+
+
 # unitGroup - sistema de unidade grau celsius
 # include=days - para que os dados vem em dias
 # contentType=csv - formato dos dados
