@@ -3,6 +3,11 @@ from os.path import join
 import pandas as pd 
 from datetime import datetime, timedelta
 
+import os 
+from dotenv import load_dotenv
+load_dotenv('/home/rafael/Documentos/utilitarios/credenciais/clima-boston.env')
+key = os.getenv("key")
+
 # intervalo de datas
 data_inicio = datetime.today()
 data_fim = data_inicio + timedelta(days=7)
@@ -28,6 +33,3 @@ os.mkdir(caminho)
 df.to_csv(caminho + 'dados_brutos.csv')
 df[['datetime', 'tempmin', 'temp', 'tempmax']].to_csv(caminho + 'temperaturas.csv')
 df[['datetime', 'description', 'icon']].to_csv(caminho + 'condicoes.csv')
-
-
-

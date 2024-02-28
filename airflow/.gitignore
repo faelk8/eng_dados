@@ -1,0 +1,12 @@
+/airflow/bin
+/airflow/dags/__*
+/airflow/logs
+/airflow/include
+/airflow/lib
+/airflow/lib64
+/airflow/a*
+/airflow/w*
+/airflow/p*
+apache*
+standalone_admin_password.txt
+semana*
