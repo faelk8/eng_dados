@@ -64,6 +64,3 @@ Iniciando o serviço
 ```
 airflow standalone
 ```
-
-admin 
-HUhHD28rERfyzbvA
