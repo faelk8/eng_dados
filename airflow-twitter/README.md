@@ -43,14 +43,23 @@ pip install "apache-airflow[celery]==2.8.1" --constraint "https://raw.githubuser
 
 Exportando variável de ambiente Airflow Home:
 ```
-export AIRFLOW_HOME=/home/rafael/MEGA/github/eng_dados/airflow-twitter
+export AIRFLOW_HOME=/home/rafael/MEGA/github/eng_dados/airflow-twitter/airflow_pipeline/
     ou
-export AIRFLOW_HOME=$(pwd)/airflow/
+export AIRFLOW_HOME=$(pwd)/airflow_pipeline/
 ```
 Iniciando o serviço:
 ```
 airflow standalone
 ```
+
+Finalizando o serviço:
+
+Crtl + c
+```
+deactivate
+```
+
+
 ## Definindo a versão 
 Instalando o Airflow:
 ```
@@ -62,7 +71,7 @@ CONSTRAINT_URL="https://raw.githubusercontent.com/apache/airflow/constraints-${A
 # Hook
 Configurando a conexão do Airflow com o Twitter
 
-<img src="../image/airflow_fluxo.png" alt="conexao" width=150px height=120px >
+<img src="../image/airflow_fluxo.png" alt="conexao" width=150px height=120px>
 
 # Operador
 
@@ -70,3 +79,14 @@ O operarador determina o que será executado em uma tarefa.<br>
 * Atomicidade - Operador realiza apenas uma tarefa
 * Indepotência - Operador sempre obtém os mesmos resultados se receber os mesmo parâmetros
 * Isolamento - O código roda de maneira individual, sem outros módulos ou operadores
+
+
+# Executando
+
+Para testar o código 
+twitter_operator.py
+
+
+# Configurações
+No arquivo `airflow.cfg` possui os parâmetros de configuração, trocar:
+* load_examples = False | Não exibe os exemplos.

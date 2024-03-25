@@ -1,4 +1,10 @@
-logs
-airflow.*
-standalone_admin_password.txt
-twitter/*
+logs/
+twitter/
+datalake/
+airflow_pipeline/operators/__pycache__
+airflow_pipeline/airflow-webserver.pid
+airflow_pipeline/airflow.cfg
+airflow_pipeline/airflow.db
+airflow_pipeline/standalone_admin_password.txt
+airflow_pipeline/hook/__pycache__
+airflow_pipeline/dags/__pycache__
