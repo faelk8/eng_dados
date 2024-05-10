@@ -1,0 +1,10 @@
+venv/
+airflow_pipeline/logs
+airflow_pipeline/airflow*
+airflow_pipeline/standalone_admin_password.txt
+airflow_pipeline/webserver_config.py
+datalake/*
+airflow_pipeline/hook/__pycache__
+airflow_pipeline/dags/__pycache__
+airflow_pipeline/operators/__pycache__
+src/*
