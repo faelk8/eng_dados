@@ -23,18 +23,18 @@ Neste exemplo extrai os dados do Twitter utilizando o Airflow, a terefa é progr
 > Os dados do código não são coletados diretamente do Twitter.
 
 
-[Configurando o ambiente](#1)<br>
-[Hook](#2)<br>
-[Operador](#3)<br>
-[DAG](#4)<br>
-[Configurações](#5)<br>
-[Arquitetura de Medalhão](#6)<br>
-[Spark](#7)<br>
+[01 - Configurando o ambiente](#1)<br>
+[02 - Hook](#2)<br>
+[03 - Operador](#3)<br>
+[04 - DAG](#4)<br>
+[05 - Configurações](#5)<br>
+[06 - Arquitetura de Medalhão](#6)<br>
+[07 - Spark](#7)<br>
 
 
 <a id="1"></a>
 
-# Configurando o ambiente
+# 01 - Configurando o ambiente
 
 <div align="right">
     <a href="#topo">Voltar ao topo</a>
@@ -91,7 +91,7 @@ Neste exemplo extrai os dados do Twitter utilizando o Airflow, a terefa é progr
 
 <a id="2"></a>
 
-# Hook
+# 02 - Hook
 
 <div align="right">
     <a href="#topo">Voltar ao topo</a>
@@ -112,7 +112,7 @@ Configurando a conexão do Airflow com o Twitter
 
 <a id="3"></a>
 
-# Operador
+# 03 - Operador
 
 <div align="right">
     <a href="#topo">Voltar ao topo</a>
@@ -126,7 +126,7 @@ Faz a extração dos dados e salva na pasta datalake, uma pasta para cada dia da
 
 <a id="4"></a>
 
-# DAG
+# 04 - DAG
 
 <div align="right">
     <a href="#topo">Voltar ao topo</a>
@@ -136,7 +136,7 @@ Orquestra quando vai ser executada cada tarefa.
 
 <a id="5"></a>
 
-# Configurações
+# 05 - Configurações
 
 <div align="right">
     <a href="#topo">Voltar ao topo</a>
@@ -147,7 +147,7 @@ Ajuste nas configurações no arquivo `airflow.cfg`:
 
 <a id="6"></a>
 
-# Arquitetura de Medalhão
+# 06 - Arquitetura de Medalhão
 <div align="right">
     <a href="#topo">Voltar ao topo</a>
 </div>
@@ -160,7 +160,7 @@ Separa os dados em camadas.<br>
 
 <a id="7"></a>
 
-# Spark
+# 07 - Spark
 
 <div align="right">
     <a href="#topo">Voltar ao topo</a>
@@ -198,5 +198,5 @@ Utilizado para analisar os dados, exploração e transformação.
   ```
 
   > [!TIP]<br>
-  > Depois que iniciar o Airflow precisa configurar a conexão do Spark no menu superior `Admin -> Connections -> spark_default`.
+  > Depois que iniciar o Airflow precisa configurar a conexão do Spark no menu superior `Admin -> Connections -> spark_default`.<br>
   > Trocar Host para local
