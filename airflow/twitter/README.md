@@ -3,7 +3,7 @@
 <h1 align="center">
   <img src="../../image/airflow.png" alt="airflow" width=700 height=250px >
   <br>
-  Extração de Dados 
+  Extração de Dados do Twitter 
 </h1>
 
 <div align="center">
@@ -15,6 +15,8 @@
 
 
 Extração de Dados do Twitter utilizando o Airflow para agendar a tarefa. Os dados são coletados informando o assunto, data de início e fim.<br>
+
+Neste exemplo extrai os dados do Twitter utilizando o Airflow, a terefa é programada para ser executa uma vez ao dia. Após a coleta os são armazenado como bronze, a próxima tarefa coleta os dados são limpos e armazenado como prata, em seguida, os são sumarizados para que seja consumido para um dashboard.
 
 
 > [!IMPORTANT]  
@@ -64,6 +66,13 @@ Extração de Dados do Twitter utilizando o Airflow para agendar a tarefa. Os da
 * Exportando a variável de ambiente e criando uma pasta para colocar todos os arquivos do Airflow
   ```
   export AIRFLOW_HOME=$(pwd)/airflow_pipeline
+  ```
+  > [!WARNING]  
+  > O código completo utilza o [Spark](#7)
+
+  * Exportando Spark
+  ```
+  export SPARK_HOME=/home/rafael/MEGA/github/eng_dados/airflow/twitter/spark-3.1.3-bin-hadoop3.2
   ```
 
 * Iniciando o Airflow
@@ -158,3 +167,36 @@ Separa os dados em camadas.<br>
 </div>
 
 Utilizado para analisar os dados, exploração e transformação.
+
+  * Instalando o Hadoop<br>
+
+
+  ```
+  wget https://archive.apache.org/dist/spark/spark-3.1.3/spark-3.1.3-bin-hadoop3.2.tgz
+
+  tar -xvzf spark-3.1.3-bin-hadoop3.2.tgz
+
+  cd spark-3.1.3-bin-hadoop3.2
+
+  ```
+
+  * Executa o processo de leitura e transformação dos dados e salva os arquivos processado.<br>
+    * src: Caminho da origem dos dados<br>
+    * dest: Caminho onde vai ser salvo os arquivos<br>
+    * process_data: Caminho dos dados processados<br>
+  ```
+  ./bin/spark-submit /home/rafael/MEGA/github/eng_dados/airflow/twitter/src/spark/transformation.py --src /home/rafael/MEGA/github/eng_dados/airflow/twitter/datalake/twitter_datascience --dest /home/rafael/MEGA/github/eng_dados/airflow/twitter/src/spark --process-date 2024-05-11
+  ```
+  * Instalando o Spark no Airflow
+  ```
+  pip install apache-airflow-providers-apache-spark
+  ```
+
+  * Exportando Spark
+  ```
+  export SPARK_HOME=/home/rafael/MEGA/github/eng_dados/spark-3.1.3-bin-hadoop3.2
+  ```
+
+  > [!TIP]<br>
+  > Depois que iniciar o Airflow precisa configurar a conexão do Spark no menu superior `Admin -> Connections -> spark_default`.
+  > Trocar Host para local
