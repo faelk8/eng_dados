@@ -1,20 +1,10 @@
-
-
-* Faz leitura linha a linha do arquivo;
-* Trata cada linha individualmente e passando para a próxima etapa;
-* Paralelização dos processos em múltiplos processos simultâneos;
-
-pcollection
-* Estado da etapa em trabalho com a aplicação de processos definidos na SDK;
-* A variável dengue contém o resultado dos processos das pipelines que ela recebe;
-* Leitura de arquivos
-
+<h1 align="center">
+  <img src="./image/airflow.png" alt="airflow" width=700 height=250px >
+  <br>
+</h1>
 
 
 # Airflow
-Agendamento de pipeline 
-Orquestrador de fluxos
-Cria, agenda e monitora datapipelines
 
 O Apache Airflow é uma ferramenta open source que foi criada pelo Airbnb em 2014 e atualmente faz parte da Apache Software Foundation. Trata-se de um orquestrador de fluxos, ou seja, nos permite decidir em qual momento e em quais condições nosso programa irá rodar. É utilizada principalmente para criação, monitoramento e agendamento de pipeline de dados de forma programática.
 
@@ -48,19 +38,8 @@ Operator: encapsula a lógica para fazer uma unidade de trabalho (task).
 
 A instalação do Airflow geralmente consiste nos seguintes componentes principais:
 
-Webserver: apresenta uma interface de usuário que nos permite inspecionar, acionar e acompanhar o comportamento dos DAGs e suas tarefas;
-Pasta de arquivos DAG: armazena os arquivos DAGs criados. Ela é lida pelo agendador e executor;
-Scheduler (agendador): lida com o acionamento dos fluxos de trabalho (DAGs) agendados e o envio de tarefas para o executor;
-Banco de dados: usado pelo agendador, executor e webserver para armazenar os metadados e status do DAG e suas tarefas;
-Executor: lida com as tarefas em execução. O Airflow possui vários executores, mas apenas um é utilizado por vez.
-
-# Instalação 
-
-```
-pip install "apache-airflow[celery]==2.8.1" --constraint "https://raw.githubusercontent.com/apache/airflow/constraints-2.8.1/constraints-3.8.txt"
-```
-
-Iniciando o serviço
-```
-airflow standalone
-```
+* Webserver: apresenta uma interface de usuário que nos permite inspecionar, acionar e acompanhar o comportamento dos DAGs e suas tarefas;<br>
+* Pasta de arquivos DAG: armazena os arquivos DAGs criados. Ela é lida pelo agendador e executor;<br>
+* Scheduler (agendador): lida com o acionamento dos fluxos de trabalho (DAGs) agendados e o envio de tarefas para o executor;<br>
+* Banco de dados: usado pelo agendador, executor e webserver para armazenar os metadados e status do DAG e suas tarefas;<br>
+* Executor: lida com as tarefas em execução. O Airflow possui vários executores, mas apenas um é utilizado por vez.<br>
