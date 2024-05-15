@@ -1,0 +1,8 @@
+venv/*
+agenda/logs/*
+agenda/air*
+agenda/standalone_admin_password.txt
+agenda/webserver_config.py
+src/*
+agenda/dags/__pycache__
+dados/*
