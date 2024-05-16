@@ -217,7 +217,7 @@ Download do Redis [aqui](https://caelum-online-public.s3.amazonaws.com/2606-apro
   result_backend = db+postgresql://airflow_user:airflow_pass@localhost/airflow_db
   broker_url = redis://0.0.0.0:6379/0
   ```
-  ## Iniciando o Serviço com Celery
+## Iniciando o Serviço com Celery
   > [!NOTE]  
   > Airflow Webserver, para evitar erros de update ajusta a variável <br>
   > update_fab_perms = False <br>
