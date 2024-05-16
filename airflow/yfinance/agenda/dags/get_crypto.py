@@ -31,5 +31,7 @@ def get_history(ticker, ds=None, ds_nodash=None):
 def get_crypto_dag():
     for ticker in TICKERS:
         get_history.override(task_id=ticker, pool="small_pool")(ticker)
+        # get_history.override(task_id=ticker, pool="small_pool")(ticker)
+        # small_pool limita a quantidade de tarefas em paralelo
 
 dag = get_crypto_dag() 
